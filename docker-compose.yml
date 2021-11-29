@@ -1,6 +1,4 @@
-version: '3.8'
-
-
+version: "2"
 services:
   zookeeper:
     image: wurstmeister/zookeeper:latest
@@ -13,9 +11,6 @@ services:
     environment:
       KAFKA_ADVERTISED_HOST_NAME: localhost
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_CREATE_TOPICS: 
-        "new-bet:1:1\
-         new-user:1:1\
-         forgot-password:1:1"
+      KAFKA_CREATE_TOPICS: "new-bet:1:1,forgot-password:1:1,new-user:1:1"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
